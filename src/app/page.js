@@ -1,5 +1,6 @@
 import About from "@/Components/About/About";
 import Banner from "@/Components/Banner/Banner";
+import Education from "@/Components/Education/Education";
 import Experience from "@/Components/Experience/Experience";
 import Navbar from "@/Components/Navbar/Navbar";
 
@@ -10,6 +11,7 @@ export default function Home() {
       <Banner />
       <About />
       <Experience />
+      <Education />
     </div>
   );
 }

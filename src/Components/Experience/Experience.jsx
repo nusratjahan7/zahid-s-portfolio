@@ -58,9 +58,9 @@ const Experience = () => {
                        hover:border-[var(--active)] dark:hover:border-[var(--btn)]
                        transition-colors duration-300"
                     >
-                        <div className="flex md:flex-col gap-2 items-baseline md:items-start">
+                        <div className="flex md:flex-col gap-2 md:items-start">
                             <IoBriefcaseSharp
-                                className="w-5 h-5 text-[var(--active)] hidden md:block"
+                                className="w-5 h-5 text-[var(--active)] "
                             />
                             <p className="text-sm font-medium text-[var(--active)]">{job.period}</p>
                         </div>
