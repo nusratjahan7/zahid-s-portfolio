@@ -1,7 +1,6 @@
 import { FaHeart } from "react-icons/fa";
 import { TbActivityHeartbeat } from "react-icons/tb";
 import { LuStethoscope } from "react-icons/lu";
-import { DivideCircle } from "lucide-react-native";
 
 const About = () => {
     return (

@@ -8,17 +8,27 @@ const useActiveSection = () => {
 
     const handleScroll = () => {
       let current = '';
-      sections.forEach(s => {
-        if (window.scrollY >= s.offsetTop - 200) {
-          current = s.getAttribute('id');
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 200; // offset for navbar height
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute('id');
         }
       });
-      navLinks.forEach(a => {
-        a.style.color = a.getAttribute('href') === '#' + current ? 'var(--accent)' : '';
+
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href').substring(1); // remove #
+        if (href === current) {
+          link.classList.add('text-accent'); // active link color
+          link.classList.remove('text-[var(--light-primary)]', 'dark:text-[var(--dark-primary)]');
+        } else {
+          link.classList.remove('text-accent');
+          link.classList.add('text-[var(--light-primary)]', 'dark:text-[var(--dark-primary)]');
+        }
       });
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // highlight link on page load
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 };

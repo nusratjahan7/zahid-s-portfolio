@@ -1,27 +1,44 @@
-"use client"
-import { useState } from 'react';
-// import './navbar.css';
-import useActiveSection from './useActiveSection';
-import Link from 'next/link';
-import { ThemeSwitch } from './ThemeToggle';
-
+"use client";
+import { useState } from "react";
+import useActiveSection from "./useActiveSection";
+import Link from "next/link";
+import { ThemeSwitch } from "./ThemeToggle";
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
     useActiveSection();
+
+    // Array for navbar links
+    const navLinks = [
+        { label: "About", href: "#about" },
+        { label: "Experience", href: "#experience" },
+        { label: "Projects", href: "#projects" },
+        { label: "Contact", href: "#contact" },
+    ];
+
     return (
-        <nav className='px-6 py-5  bg-[var(--bg-light)] dark:bg-[var(--bg-dark)] sticky top-0 right-0 left-0 z-50'>
+        <nav className="px-6 py-5 bg-[var(--bg-light)] dark:bg-[var(--bg-dark)] sticky top-0 right-0 left-0 z-50 transition-colors duration-300">
             {/* Top bar */}
             <div className="flex justify-between items-center">
-                <a href="#" className="nav-logo font1 text-2xl font-bold text-(--light-primary) dark:text-(--dark-primary) tracking-[-0.5px]">
+                <a
+                    href="#"
+                    className="nav-logo font1 text-2xl font-bold text-[var(--light-primary)] dark:text-[var(--dark-primary)] tracking-[-0.5px]"
+                >
                     Z<span className="text-accent font1"> I</span>
                 </a>
 
+                {/* Desktop Links */}
                 <ul className="nav-links hidden md:flex gap-10 list-none">
-                    <li><a href="#about" className='text-(--light-primary) dark:text-(--dark-primary)'>About</a></li>
-                    <li><a href="#skills" className='text-(--light-primary) dark:text-(--dark-primary)'>Skills</a></li>
-                    <li><a href="#projects" className='text-(--light-primary) dark:text-(--dark-primary)'>Projects</a></li>
-                    <li><a href="#contact" className='text-(--light-primary) dark:text-(--dark-primary)' >Contact</a></li>
+                    {navLinks.map(({ label, href }) => (
+                        <li key={label}>
+                            <a
+                                href={href}
+                                className="text-[var(--light-primary)] dark:text-[var(--dark-primary)] hover:text-accent transition-colors"
+                            >
+                                {label}
+                            </a>
+                        </li>
+                    ))}
                     <li>
                         <Link
                             href="/Resume.pdf"
@@ -34,43 +51,35 @@ const Navbar = () => {
                         </Link>
                     </li>
                 </ul>
-                <div className='flex items-center gap-8'>
+
+                {/* Theme switch + Mobile menu toggle */}
+                <div className="flex items-center gap-8">
                     <ThemeSwitch />
                     <button
                         onClick={() => setOpen(!open)}
-                        className="md:hidden text-(--light-primary) dark:text-(--dark-primary) text-3xl"
+                        className="md:hidden text-[var(--light-primary)] dark:text-[var(--dark-primary)] text-3xl"
                         aria-label="Toggle menu"
                     >
-                        {open ? '✕' : '☰'}
+                        {open ? "✕" : "☰"}
                     </button>
                 </div>
             </div>
 
-            {/* Mobile dropdown — now INSIDE <nav> */}
+            {/* Mobile dropdown */}
             {open && (
-                <div className="md:hidden w-11/12 mx-auto mb-4 rounded-2xl border border-(--light-secondary)/20 dark:bg-(--dark-bg) dark:border dark:border-(--dark2) backdrop-blur-xl px-6 py-6 mt-2">
-                    <ul className="nav-links flex flex-col gap-5 list-none text-(--light-primary) dark:text-(--dark-primary)">
-                        <li>
-                            <a href="#about" onClick={() => setOpen(false)} className="block  hover:text-accent uppercase transition">
-                                About
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#skills" onClick={() => setOpen(false)} className="block  hover:text-accent uppercase transition">
-                                Skills
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#projects" onClick={() => setOpen(false)} className="block  hover:text-accent uppercase transition">
-                                Projects
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#contact" onClick={() => setOpen(false)} className="block   hover:text-accent uppercase transition">
-                                Contact
-                            </a>
-                        </li>
+                <div className="md:hidden w-11/12 mx-auto mb-4 rounded-2xl border border-[var(--light-secondary)]/20 dark:bg-[var(--bg-dark)] dark:border-[var(--dark2)] backdrop-blur-xl px-6 py-6 mt-2 transition-colors duration-300">
+                    <ul className="nav-links flex flex-col gap-5 list-none text-[var(--light-primary)] dark:text-[var(--dark-primary)]">
+                        {navLinks.map(({ label, href }) => (
+                            <li key={label}>
+                                <a
+                                    href={href}
+                                    onClick={() => setOpen(false)}
+                                    className="block hover:text-accent uppercase transition-colors"
+                                >
+                                    {label}
+                                </a>
+                            </li>
+                        ))}
                         <li>
                             <Link
                                 href="/Resume.pdf"
