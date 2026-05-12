@@ -24,7 +24,7 @@ const Navbar = () => {
                     href="#"
                     className="nav-logo font1 text-2xl font-bold text-[var(--light-primary)] dark:text-[var(--dark-primary)] tracking-[-0.5px]"
                 >
-                    Z<span className="text-accent font1"> I</span>
+                    Zahid<span className="text-accent font1">.</span>
                 </a>
 
                 {/* Desktop Links */}

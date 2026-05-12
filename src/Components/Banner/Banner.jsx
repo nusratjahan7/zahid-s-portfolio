@@ -26,7 +26,7 @@ const Banner = () => {
                         BNMC Reg. No. 17621
                     </div>
 
-                    <h1 className='text-6xl font1 md:text-7xl font-medium leading-[1.0] tracking-tight text-(--light-primary) dark:text-(--dark-primary)'>Za <br /> <span className='font1 gradient-text'>Is</span></h1>
+                    <h1 className='text-6xl font1 md:text-7xl font-medium leading-[1.0] tracking-tight text-(--light-primary) dark:text-(--dark-primary)'>Zahidul <br /> <span className='font1 gradient-text'>Islam</span></h1>
 
                     <div className="mt-5 flex items-center gap-4">
                         <span className="h-px block" />

@@ -28,10 +28,10 @@ const About = () => {
                     >
                         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-500/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         <div
-                            className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
+                            className="w-14 h-3 rounded-2xl flex items-center justify-center mb-6"
 
                         >
-                            <Icon className="w-6 h-6 text-stone-950 dark:text-(--dark-icon)" />
+                            <Icon className="w-7 h-7 text-stone-950 dark:text-(--dark-icon)" />
                         </div>
                         <h3
                             className="text-2xl font-medium mb-3 text-stone-900 dark:text-stone-100"
