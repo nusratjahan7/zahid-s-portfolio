@@ -1,14 +1,20 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { FaMoon } from "react-icons/fa";
 import { MdSunny } from "react-icons/md";
 
 export function ThemeSwitch() {
     const { theme, setTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => setMounted(true), []);
+
+    if (!mounted) return <div style={{ width: "2.5rem", height: "2.5rem" }} />;
 
     return (
-        <button className="text-black" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+        <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
             {theme === "dark" ? <MdSunny
                 className="rounded-full bg-yellow-50 text-yellow-500"
                 style={{

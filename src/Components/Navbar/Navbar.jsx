@@ -1,6 +1,6 @@
 "use client"
 import { useState } from 'react';
-// import './navbar.css'
+// import './navbar.css';
 import useActiveSection from './useActiveSection';
 import Link from 'next/link';
 import { ThemeSwitch } from './ThemeToggle';
@@ -10,18 +10,18 @@ const Navbar = () => {
     const [open, setOpen] = useState(false);
     useActiveSection();
     return (
-        <nav className='backdrop-blur-2xl px-6 py-7'>
+        <nav className='px-6 py-5  bg-[var(--bg-light)] dark:bg-[var(--bg-dark)] sticky top-0 right-0 left-0 z-50'>
             {/* Top bar */}
             <div className="flex justify-between items-center">
                 <a href="#" className="nav-logo font1 text-2xl font-bold text-(--light-primary) dark:text-(--dark-primary) tracking-[-0.5px]">
-                    Zahidul<span className="text-accent"> Islam</span>
+                    Z<span className="text-accent font1"> I</span>
                 </a>
 
                 <ul className="nav-links hidden md:flex gap-10 list-none">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact" >Contact</a></li>
+                    <li><a href="#about" className='text-(--light-primary) dark:text-(--dark-primary)'>About</a></li>
+                    <li><a href="#skills" className='text-(--light-primary) dark:text-(--dark-primary)'>Skills</a></li>
+                    <li><a href="#projects" className='text-(--light-primary) dark:text-(--dark-primary)'>Projects</a></li>
+                    <li><a href="#contact" className='text-(--light-primary) dark:text-(--dark-primary)' >Contact</a></li>
                     <li>
                         <Link
                             href="/Resume.pdf"

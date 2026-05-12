@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 @import "@heroui/styles";
+@plugin "daisyui";
 
 :root {
   --bg-dark: #0D1117;
@@ -22,7 +23,10 @@
   --light3: #EAF0FC;
   --light-primary: #111827;
   --light-secondary: #6B7280;
-  --light-icon: #9CA3AF
+  --light-icon: #9CA3AF;
+
+  --gold: #c9a84c;
+  --grad: linear-gradient(135deg, #2563C4 0%, #2563C4 50%, #2563C4 100%);
 }
 
 * {
@@ -31,4 +35,58 @@
 
 .font1 {
   font-family: "Playfair Display", serif;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #2563C4 0%, #3B82F6 50%, #60A5FA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+
+}
+
+section {
+  padding: 40px 24px;
+}
+
+.section-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 1.0;
+}
+
+.section-title em {
+  font-style: italic;
+}
+
+/* Divider */
+.divider {
+  width: 60px;
+  height: 2px;
+  background: var(--accent);
+  margin: 20px 0 40px;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding: 40px 60px;
+  }
+}
+
+@media (max-width: 767px) {
+  section {
+    padding: 30px 25px;
+  }
 }
