@@ -13,7 +13,7 @@ const Navbar = () => {
         { label: "About", href: "#about" },
         { label: "Experience", href: "#experience" },
         { label: "Education", href: "#education" },
-        { label: "Skill", href: "#skill" },
+        { label: "Skills", href: "#skills" },
         { label: "Contact", href: "#contact" },
     ];
 
@@ -46,7 +46,7 @@ const Navbar = () => {
                             download="Zahid's_Resume.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="nav-cta uppercase bg-accent px-6 py-2.5 rounded-full font-medium transition-all ease-in-out duration-300"
+                            className="nav-cta text-white uppercase bg-accent px-6 py-2.5 rounded-full font-medium transition-all ease-in-out duration-300"
                         >
                             Download CV
                         </Link>

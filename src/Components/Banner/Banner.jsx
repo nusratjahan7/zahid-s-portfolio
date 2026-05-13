@@ -6,7 +6,7 @@ import { FaArrowRightLong } from 'react-icons/fa6';
 
 const Banner = () => {
     return (
-        <section id='#' className="relative  pt-14 pb-15 overflow-hidden px-8 md:px-10">
+        <section id='#' className="relative min-h-[88vh] pt-14 pb-15 overflow-hidden px-8 md:px-10">
             <Image src={heroBg} alt='hero-bg' className="absolute inset-0 w-full h-full  pointer-events-none object-cover opacity-[0.10] dark:opacity-[0.03]" />
             {/* <div className="absolute inset-0
                   bg-gradient-to-b
