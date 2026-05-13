@@ -3,8 +3,9 @@ import Banner from "@/Components/Banner/Banner";
 import Education from "@/Components/Education/Education";
 import Experience from "@/Components/Experience/Experience";
 import Navbar from "@/Components/Navbar/Navbar";
-import Contact from "@/Components/Skill/Contact/Contact";
+import Contact from "@/Components/Contact/Contact";
 import Skill from "@/Components/Skill/Skill";
+import Footer from "@/Components/Footer/Footer";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Education />
       <Skill />
       <Contact />
+      <Footer />
     </div>
   );
 }
