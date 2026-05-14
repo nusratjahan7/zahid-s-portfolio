@@ -26,7 +26,7 @@ const Banner = () => {
                         BNMC Reg. No. 17621
                     </div>
 
-                    <h1 className='text-6xl font1 md:text-7xl font-medium leading-[1.0] tracking-tight text-(--light-primary) dark:text-(--dark-primary)'>Precision in the  <br /> <span className='font1 gradient-text'>operating room</span></h1>
+                    <h1 className='text-5xl sm:text-6xl font1 md:text-7xl font-medium leading-[1.0] tracking-tight text-(--light-primary) dark:text-(--dark-primary)'>Precision in the  <br /> <span className='font1 gradient-text'>operating room</span></h1>
 
                     <div className="mt-5 flex items-center gap-4">
                         <span className="h-px block" />
@@ -59,7 +59,7 @@ const Banner = () => {
 
                 <div className='relative'>
                     <Image src={heroBg} alt='zahidul islam' height={600} width={600} />
-                    <div className="absolute -bottom-5 -right-3 md:-right-5 w-25 h-25 rounded-full bg-white/30 border border-(--btn)/20 flex items-center justify-center text-[12px] font-mono text-(--dark2) text-center leading-[1.4] backdrop-blur-sm">
+                    <div className="absolute -bottom-5 -right-3 md:-right-5 w-25 h-25 rounded-full bg-white/30 border border-(--btn)/20 flex items-center justify-center text-[12px] font-mono text-gray-900 text-center leading-[1.4] backdrop-blur-sm">
                         Certified<br />BLS · ACLS
                     </div>
                 </div>
