@@ -7,9 +7,27 @@ import { FaLinkedin } from "react-icons/fa";
 const ContactModal = ({ onClose }) => {
     const [formData, setFormData] = useState({ name: "", email: "", message: "" });
     const [sent, setSent] = useState(false);
+    const [status, setStatus] = useState("");
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        setStatus("sending");
+
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+
+        const res = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                ...data,
+                access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+            }),
+        });
+
+        const result = await res.json();
+
         setSent(true);
         setTimeout(onClose, 2000);
     };
@@ -43,8 +61,11 @@ const ContactModal = ({ onClose }) => {
                     </p>
                 ) : (
                     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                        <input type="checkbox" name="botcheck" className="hidden" />
+
                         <input
                             type="text"
+                            name="name"
                             placeholder="Your Name"
                             required
                             value={formData.name}
@@ -53,6 +74,7 @@ const ContactModal = ({ onClose }) => {
                         />
                         <input
                             type="email"
+                            name="email"
                             placeholder="Your Email"
                             required
                             value={formData.email}
@@ -60,6 +82,7 @@ const ContactModal = ({ onClose }) => {
                             className="w-full px-4 py-3 rounded-xl bg-transparent border border-(--light-icon)! dark:border-(--dark2)! text-(--light-primary) dark:text-(--dark-primary) focus:outline-none focus:border-(--active) transition-colors"
                         />
                         <textarea
+                            name="message"
                             placeholder="Your Message"
                             required
                             rows={4}
@@ -71,7 +94,7 @@ const ContactModal = ({ onClose }) => {
                             type="submit"
                             className="w-full text-white uppercase font-medium py-3 rounded-full bg-(--active) hover:opacity-90 transition-all duration-300"
                         >
-                            Send Message
+                            {status === "sending" ? "Sending..." : "Send Message"}
                         </button>
                     </form>
                 )}
@@ -87,7 +110,7 @@ const Contact = () => {
         <>
             {showModal && <ContactModal onClose={() => setShowModal(false)} />}
 
-            <section id="contact">
+            <section id="contact" className="px-3">
                 <div className="my-8">
                     <p className="section-tag">// Contact</p>
                     <h3 className="section-title text-(--light-primary) dark:text-(--dark-primary)">Let's connect.</h3>
@@ -146,7 +169,7 @@ const Contact = () => {
                     </div>
 
                     <div className="grid gap-3">
-                        <div className="flex items-center gap-4 p-7 rounded-2xl shadow-lg bg-white dark:bg-(--dark2) border border-(--light-icon)/20 dark:border-(--dark3)">
+                        <div className="flex flex-col sm:flex-row items-center gap-4 p-7 rounded-2xl shadow-lg bg-white dark:bg-(--dark2) border border-(--light-icon)/20 dark:border-(--dark3)">
                             <a
                                 href="https://www.linkedin.com/in/yourprofile"
                                 target="_blank"

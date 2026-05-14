@@ -7,7 +7,7 @@ import { FaArrowRightLong } from 'react-icons/fa6';
 const Banner = () => {
     return (
         <section id='#' className="relative min-h-[88vh] pt-14 pb-15 overflow-hidden px-8 md:px-10">
-            <Image src={heroBg} alt='hero-bg' className="absolute inset-0 w-full h-full  pointer-events-none object-cover opacity-[0.10] dark:opacity-[0.03]" />
+            <Image src={heroBg} alt='hero-bg' className="absolute inset-0 w-full h-full  pointer-events-none object-cover opacity-[0.09] dark:opacity-[0.08]" />
             {/* <div className="absolute inset-0
                   bg-gradient-to-b
                   from-[var(--light)]/30
@@ -26,7 +26,7 @@ const Banner = () => {
                         BNMC Reg. No. 17621
                     </div>
 
-                    <h1 className='text-6xl font1 md:text-7xl font-medium leading-[1.0] tracking-tight text-(--light-primary) dark:text-(--dark-primary)'>Zahidul <br /> <span className='font1 gradient-text'>Islam</span></h1>
+                    <h1 className='text-6xl font1 md:text-7xl font-medium leading-[1.0] tracking-tight text-(--light-primary) dark:text-(--dark-primary)'>Precision in the  <br /> <span className='font1 gradient-text'>operating room</span></h1>
 
                     <div className="mt-5 flex items-center gap-4">
                         <span className="h-px block" />
@@ -36,7 +36,7 @@ const Banner = () => {
                     </div>
 
                     <p className="mt-5 max-w-xl text-md leading-relaxed text-stone-500 dark:text-stone-400 font-light">
-                        A compassionate cardiac nurse with hands-on Cath Lab expertise — from angiograms
+                        I'm <strong className='font-bold'>Zahidul Islam</strong> — a compassionate cardiac nurse with hands-on Cath Lab expertise from angiograms
                         and PCI to pacemaker implantation and emergency resuscitation at Ibrahim Cardiac
                         Hospital, Dhaka.
                     </p>
