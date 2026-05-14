@@ -1,4 +1,3 @@
-
 import React from 'react';
 import heroBg from '@/assets/hero-bg.jpg';
 import Image from 'next/image';
@@ -19,7 +18,8 @@ const Banner = () => {
             /> */}
             <div className='flex flex-col gap-8 md:flex-row items-center justify-between'>
                 <div>
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-(--light-primary) dark:text-(--dark-primary)
+                    <div
+                        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-(--light-primary) dark:text-(--dark-primary)
                          bg-stone-100/80 dark:bg-(--dark2)/70
                          border border-blue-300/50 dark:border-(--dark3)/30
                          backdrop-blur-sm text-[11px] tracking-[0.25em] uppercase font-medium mb-8">
@@ -65,7 +65,7 @@ const Banner = () => {
                 </div>
             </div>
 
-        </section>
+        </section >
     );
 };
 
