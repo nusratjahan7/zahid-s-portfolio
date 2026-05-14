@@ -28,9 +28,16 @@ const ContactModal = ({ onClose }) => {
 
         const result = await res.json();
 
+        if (res.ok) {
+            setStatus("success");
+        } else {
+            setStatus("error");
+        }
+
         setSent(true);
         setTimeout(onClose, 2000);
     };
+
 
     return (
         <div
@@ -96,6 +103,13 @@ const ContactModal = ({ onClose }) => {
                         >
                             {status === "sending" ? "Sending..." : "Send Message"}
                         </button>
+
+                        {/* Status messages */}
+                        {status === "error" && (
+                            <p className="text-red-500 text-sm text-center">
+                                ❌ Something went wrong. Please try again.
+                            </p>
+                        )}
                     </form>
                 )}
             </div>
