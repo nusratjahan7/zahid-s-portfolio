@@ -1,5 +1,6 @@
 import React from 'react';
 import heroBg from '@/assets/hero-bg.jpg';
+import zahid from '@/assets/zahid.png';
 import Image from 'next/image';
 import { FaArrowRightLong } from 'react-icons/fa6';
 
@@ -58,7 +59,7 @@ const Banner = () => {
                 </div>
 
                 <div className='relative'>
-                    <Image src={heroBg} alt='zahidul islam' height={600} width={600} />
+                    <Image src={zahid} alt='zahidul islam' height={400} width={400} className='rounded-2xl' />
                     <div className="absolute -bottom-5 -right-3 md:-right-5 w-25 h-25 rounded-full bg-white/30 border border-(--btn)/20 flex items-center justify-center text-[12px] font-mono text-gray-900 text-center leading-[1.4] backdrop-blur-sm">
                         Certified<br />BLS · ACLS
                     </div>
