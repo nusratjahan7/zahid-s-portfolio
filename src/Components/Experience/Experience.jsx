@@ -48,7 +48,7 @@ const Experience = () => {
                 <div className="divider"></div>
             </div>
 
-            <div className="space-y-6 px-5 md:px-20">
+            <div className="space-y-6  md:px-15">
                 {jobs.map((job) => (
                     <div
                         key={job.period}
