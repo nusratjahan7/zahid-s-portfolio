@@ -49,7 +49,7 @@ const Banner = () => {
                             View Experience <FaArrowRightLong />
                         </a>
                         <a
-                            href="#experience"
+                            href="#contact"
                             className="border border-(--light-secondary) text-(--light-secondary) px-4 py-2 rounded-full dark:text-white/80 hover:dark:text-white hover:dark:border-white text-center transition hover:opacity-90 flex gap-1.5"
                         >
                             Get in Touch
