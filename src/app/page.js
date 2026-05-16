@@ -7,7 +7,8 @@ import Contact from "@/Components/Contact/Contact";
 import Skill from "@/Components/Skill/Skill";
 import Footer from "@/Components/Footer/Footer";
 
-export default function Home() {
+export default async function Home() {
+  await new Promise(r => setTimeout(r, 800));
   return (
     <div>
       <Navbar />
