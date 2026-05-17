@@ -8,7 +8,7 @@ import Skill from "@/Components/Skill/Skill";
 import Footer from "@/Components/Footer/Footer";
 
 export default async function Home() {
-  await new Promise(r => setTimeout(r, 800));
+  await new Promise(r => setTimeout(r, 850));
   return (
     <div>
       <Navbar />
