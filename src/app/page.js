@@ -7,6 +7,8 @@ import Contact from "@/Components/Contact/Contact";
 import Skill from "@/Components/Skill/Skill";
 import Footer from "@/Components/Footer/Footer";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   await new Promise(r => setTimeout(r, 850));
   return (

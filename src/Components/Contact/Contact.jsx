@@ -231,7 +231,7 @@ const Contact = () => {
                             </p>
                             <div className="mt-4 space-y-1 text-sm text-(--light-primary) dark:text-(--dark-primary)">
                                 <p>📞 +880 177-643131</p>
-                                <p>✉ shuvashish@iubat.edu</p>
+                                <p>✉️ shuvashish@iubat.edu</p>
                             </div>
                         </div>
                     </div>
